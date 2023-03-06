@@ -1,7 +1,35 @@
 package jm.task.core.jdbc;
 
+import jm.task.core.jdbc.dao.UserDao;
+import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
+import jm.task.core.jdbc.model.User;
+import jm.task.core.jdbc.service.UserService;
+import jm.task.core.jdbc.service.UserServiceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        // реализуйте алгоритм здесь
+        UserService userService = new UserServiceImpl();
+
+        userService.createUsersTable();
+
+        userService.saveUser("Иван1", "Иванов1", (byte) 12);
+        System.out.println("User с именем – Иван1 добавлен в базу данных");
+
+        userService.saveUser("Иван2", "Иванов2", (byte) 13);
+        System.out.println("User с именем – Иван2 добавлен в базу данных");
+
+        userService.saveUser("Иван3", "Иванов3", (byte) 14);
+        System.out.println("User с именем – Иван3 добавлен в базу данных");
+
+        userService.saveUser("Иван4", "Иванов4", (byte) 15);
+        System.out.println("User с именем – Иван4 добавлен в базу данных");
+
+
+        System.out.println(userService.getAllUsers().toString());
+        userService.cleanUsersTable();
+        userService.dropUsersTable();
     }
 }
