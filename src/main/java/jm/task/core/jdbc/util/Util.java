@@ -54,12 +54,7 @@ public class Util {
 
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 
-                settings.put(Environment.HBM2DDL_AUTO, "update");
-
-
-//                settings.put(Environment.C3P0_MIN_SIZE, 5);
-//                settings.put(Environment.C3P0_MAX_SIZE, 200);
-//                settings.put(Environment.C3P0_MAX_STATEMENTS, 200);
+                settings.put(Environment.HBM2DDL_AUTO, "none");
 
                 configuration.setProperties(settings);
 
